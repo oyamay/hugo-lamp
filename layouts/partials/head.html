@@ -1,5 +1,6 @@
 {{ $gohugoio := "gohugoio" }}
-{{ $logo := "/img/avatar.jpg" }}
+{{ $logo := "/img/avatar.png" }}
+{{ $logo_border := "/img/avatar_border.png" }}
 <!-- Site & Page Meta Data -->
 {{ if eq .Type "post" }}
   {{ $description := .Description | default .Summary }}
@@ -19,7 +20,7 @@
     <meta name="twitter:site" content="@{{ .Site.Params.twitter | default $gohugoio }}" />
     <meta name="twitter:title" content="{{ .Title }}" />
     <meta name="twitter:description" content="{{ $description | plainify }}" />
-    <meta name="twitter:image" content="{{ $logo | absURL }}" />
+    <meta name="twitter:image" content="{{ $logo_border | absURL }}" />
   {{ end }}
 
 {{ else }}
@@ -33,7 +34,7 @@
   <meta name="twitter:site" content="@{{ .Site.Params.twitter | default $gohugoio }}" />
   <meta name="twitter:title" content="{{ if isset .Site.Params "seotitle" }}{{ .Site.Params.seotitle }}{{ else }}{{ .Site.Title }}{{ end }}" />
   <meta name="twitter:description" content="{{ .Site.Params.description }}" />
-  <meta name="twitter:image" content="{{ $logo | absURL }}" />
+  <meta name="twitter:image" content="{{ $logo_border | absURL }}" />
 
 {{ end }}
 
@@ -56,7 +57,24 @@
 {{ if isset .Site.Params "msvalidate" }}<meta name="msvalidate.01" content="{{ .Site.Params.msValidate }}" />{{ end }}
 
 <!-- Favicon and Touch icons -->
-<link rel="icon" href="/img/favicon.ico" />
+<link rel="apple-touch-icon" sizes="57x57" href="/favicon/apple-icon-57x57.png">
+<link rel="apple-touch-icon" sizes="60x60" href="/favicon/apple-icon-60x60.png">
+<link rel="apple-touch-icon" sizes="72x72" href="/favicon/apple-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="76x76" href="/favicon/apple-icon-76x76.png">
+<link rel="apple-touch-icon" sizes="114x114" href="/favicon/apple-icon-114x114.png">
+<link rel="apple-touch-icon" sizes="120x120" href="/favicon/apple-icon-120x120.png">
+<link rel="apple-touch-icon" sizes="144x144" href="/favicon/apple-icon-144x144.png">
+<link rel="apple-touch-icon" sizes="152x152" href="/favicon/apple-icon-152x152.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-icon-180x180.png">
+<link rel="icon" type="image/png" sizes="192x192"  href="/favicon/android-icon-192x192.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="96x96" href="/favicon/favicon-96x96.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png">
+<link rel="manifest" href="/favicon/manifest.json">
+<meta name="msapplication-TileColor" content="#ffffff">
+<meta name="msapplication-TileImage" content="/favicon/ms-icon-144x144.png">
+<meta name="theme-color" content="#ffffff">
+
 <meta name="apple-mobile-web-app-capable" content="yes">
 <link rel="apple-touch-icon" sizes="120x120" href="{{ $logo }}">
 
